@@ -2,11 +2,20 @@ usuario puede registrar como alumno/profesor
 
 
 
-registro con el usuario de racima
+registro con el usuario de racima y correo
+
+inicio sesión con uri
 
 admin define fecha entrega
 
 alumno puede enviar propuesta 
+
+si alumno no aprueba todas las asignaturas, recuperaciones hasta junio
+		si aprueba presentara su trabajo en enero
+
+dos calendarios
+	si aprueba todo en la primera recuperación va a empresas y hace el trabajo de marzo a junio
+	si aprueba en las recuperaciones de junio va a empresas de octubre a enero y expone en enero
 
 profesor si es del mismo depto. puede ver la propuesta
 	titulo
@@ -19,11 +28,15 @@ si deniegan plazo de 10 días/modificar
 
 si pasa el plazo se genera una
 
-admin asigna tutor a alumno
+aleatorio asigna tutor a alumno
 
-chat tutor-alumno
+poder ver otros alumnos, trabajo y tutor designado
 
-generar tutoría cada 2 semanas con calendario(sitio/hora o Google meet)
+tutor ver sus alumnos
+
+profesor puede dar alumnos
+
+tutor marca fecha de tutoría cada 2 semanas con calendario(sitio/hora o Google meet)
 
 fecha limite
 
@@ -40,6 +53,9 @@ debe incluir instrucciones
 
 definir rubrica
 
+el tribunal guarda la nota
+
+si se suspende se vuelve a presentar el mismo proyecto en enero
 
 archivar proyectos
 
