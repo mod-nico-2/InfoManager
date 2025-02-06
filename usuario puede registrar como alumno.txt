@@ -1,0 +1,45 @@
+usuario puede registrar como alumno/profesor
+
+
+
+registro con el usuario de racima
+
+admin define fecha entrega
+
+alumno puede enviar propuesta 
+
+profesor si es del mismo depto. puede ver la propuesta
+	titulo
+	descripción
+	tipo de proyecto
+
+profesores aceptan o deniegan la propuesta
+
+si deniegan plazo de 10 días/modificar
+
+si pasa el plazo se genera una
+
+admin asigna tutor a alumno
+
+chat tutor-alumno
+
+generar tutoría cada 2 semanas con calendario(sitio/hora o Google meet)
+
+fecha limite
+
+solución final(incluye análisis, diseño, pruebas y resultados)
+
+admin designa
+	tribunal
+		jefe depto.
+		tutor
+		un miembro(profe del ciclo)(revisión de horarios)
+
+la presentación lleva signada una fecha, horario y aula
+debe incluir instrucciones
+
+definir rubrica
+
+
+archivar proyectos
+
