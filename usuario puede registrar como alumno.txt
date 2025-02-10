@@ -1,14 +1,42 @@
 usuario puede registrar como alumno/profesor
+Como usuario quiero poder registrarme como alumno/profesor para acceder a la aplicacion
+
+alumno puede enviar propuesta 
+Como alumno quiero poder enviar una propuesta para que pueda ser revisada
+
+profesores aceptan o deniegan la propuesta
+Como profesor quiero poder aceptar o denegar propuestas para notificar al alumno
+
+si deniegan plazo de 10 días/modificar
+Como alumno quiero poder modificar la propuesta si es denegada para corregir los fallos
+
+tutor ver sus alumnos
+Como profesor quiero poder ver a los alumnos que tengo asignados para gestionar los proyectos
+
+profesor puede dar alumnos
+Como profesor quiero poder mover un alumno asignado a otro profesor 
+
+
+
+
+
+profesor si es del mismo depto. puede ver la propuesta
+	titulo
+	descripción
+	tipo de proyecto
 
 
 
 registro con el usuario de racima y correo
-
 inicio sesión con uri
 
-admin define fecha entrega
 
-alumno puede enviar propuesta 
+admin define fecha entrega
+Como administrador quiero poder definir una fecha de entrega para que los alumnos entregen las propuestas
+
+
+
+
 
 si alumno no aprueba todas las asignaturas, recuperaciones hasta junio
 		si aprueba presentara su trabajo en enero
@@ -17,24 +45,21 @@ dos calendarios
 	si aprueba todo en la primera recuperación va a empresas y hace el trabajo de marzo a junio
 	si aprueba en las recuperaciones de junio va a empresas de octubre a enero y expone en enero
 
-profesor si es del mismo depto. puede ver la propuesta
-	titulo
-	descripción
-	tipo de proyecto
 
-profesores aceptan o deniegan la propuesta
 
-si deniegan plazo de 10 días/modificar
+
+
+
 
 si pasa el plazo se genera una
 
 aleatorio asigna tutor a alumno
 
+
 poder ver otros alumnos, trabajo y tutor designado
 
-tutor ver sus alumnos
 
-profesor puede dar alumnos
+
 
 tutor marca fecha de tutoría cada 2 semanas con calendario(sitio/hora o Google meet)
 
