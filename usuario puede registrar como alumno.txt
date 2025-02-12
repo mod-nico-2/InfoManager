@@ -3,7 +3,6 @@ DNI
 nombre
 apellido
 curso
-id_proyecto
 prof_asociado
 
 
