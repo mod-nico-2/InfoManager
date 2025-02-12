@@ -4,7 +4,7 @@ using API_InfoManager.Models.Entity;
 
 namespace API_InfoManager.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<AppUser>
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -21,7 +21,6 @@ namespace API_InfoManager.Data
         public DbSet<ProfesorEntity> Profesores { get; set; }
         public DbSet<ProyectoEntity> Proyectos { get; set; }
         public DbSet<ReunionEntity> Reuniones { get; set; }
-        public DbSet<AppUser> AppUsers { get; set; }
-        public DbSet<User> Users { get; set; }
+
     }
 }

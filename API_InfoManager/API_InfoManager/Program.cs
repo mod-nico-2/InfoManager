@@ -12,28 +12,33 @@ using API_InfoManager.AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Db connection config
+// Configuración de la conexión a la base de datos
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
 });
 
-// Add services to the container.
-builder.Services.AddScoped<IVestidoRepository, VestidoRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IPujaRepository, PujaRepository>();
+// Registro de servicios y repositorios
+builder.Services.AddScoped<IAlumnoRepository, AlumnoRepository>();
+builder.Services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
+builder.Services.AddScoped<IProfesorRepository, ProfesorRepository>();
+builder.Services.AddScoped<IProyectoRepository, ProyectoRepository>();
+builder.Services.AddScoped<IReunionRepository, ReunionRepository>();
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
-//Logger setup
+
+// Configuración del Logger
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
-// builder cache
+// Configuración de caché en memoria
 builder.Services.AddMemoryCache();
 
-//.Net Identity Configuration
-builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+// Configuración de identidad en .NET
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
-//Setting Authentication Code
+// Configuración de autenticación con JWT
 var key = builder.Configuration.GetValue<string>("ApiSettings:SecretKey");
 
 builder.Services.AddAuthentication(auth =>
@@ -53,21 +58,17 @@ builder.Services.AddAuthentication(auth =>
     };
 });
 
-
-
-
-//Required for Authorization
+// Configuración de autorización
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-//Swagger Configuration
+// Configuración de Swagger con autenticación JWT
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Auth Bearer Token \r\n\r\n" +
-        "Insert The token with the following format: Bearer thgashqkssuqj",
+        Description = "Autenticación con JWT Bearer Token \r\n\r\n" +
+                      "Introduce el token con el formato: Bearer <TOKEN>",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Scheme = "Bearer"
@@ -90,18 +91,15 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-//CORS Policy
-
+// Configuración de CORS
 builder.Services.AddCors(p => p.AddPolicy("CorsPolicy", build =>
 {
-    //modify URL with required domain of the front-end app
     build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
 
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuración del pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -109,7 +107,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
