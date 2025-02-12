@@ -19,16 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Migrations\" />
     <Folder Include="Model\DTOs\ReunionDTO\" />
     <Folder Include="Model\DTOs\ProyectoDTO\" />
     <Folder Include="Model\DTOs\ProfesorDTO\" />
-    <Folder Include="Model\Entity\" />
     <Folder Include="Attributes\" />
     <Folder Include="AutoMapper\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Repository\IRepository\" />
   </ItemGroup>
 
 </Project>

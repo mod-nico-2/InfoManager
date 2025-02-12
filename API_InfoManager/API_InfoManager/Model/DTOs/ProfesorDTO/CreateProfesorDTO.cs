@@ -2,17 +2,20 @@
 
 namespace API_InfoManager.Models.DTOs.ProfesorDTO
 {
-    public class CreateAlumnoDTO
+    public class CreateProfesorDTO
     {
-        [Required(ErrorMessage = "Name is required")]
-        [MaxLength(50, ErrorMessage = "Max char is 100")]
-        public string Name { get; set; }
-        [Required(ErrorMessage = "Apellido is required")]
-        [MaxLength(50, ErrorMessage = "Max char is 100")]
-        public string Apellido { get; set; }
-        [Required(ErrorMessage = "Curso is required")]
-        [MaxLength(50, ErrorMessage = "Max char is 100")]
-        public string Curso { get; set; }
+        [Required(ErrorMessage = "DNI is required")]
+        public int DNI { get; set; }
 
+        [Required(ErrorMessage = "Nombre is required")]
+        [MaxLength(50, ErrorMessage = "Max char is 50")]
+        public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "Apellido is required")]
+        [MaxLength(50, ErrorMessage = "Max char is 50")]
+        public string Apellido { get; set; }
+
+        [Required(ErrorMessage = "ID_Departamento is required")]
+        public int ID_Departamento { get; set; }
     }
 }

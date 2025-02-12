@@ -1,6 +1,6 @@
 ﻿namespace API_InfoManager.Models.DTOs.ProyectoDTO
 {
-    public class ProyectoDTO : CreatePujaDTO
+    public class ProyectoDTO : CreateProyectoDTO
     {
         public int ID { get; set; }
         public string Creador { get; set; }

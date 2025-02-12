@@ -1,6 +1,6 @@
 ﻿namespace API_InfoManager.Models.DTOs.ProfesorDTO
 {
-    public class ProfesorDTO : CreatePujaDTO
+    public class ProfesorDTO : CreateProfesorDTO
     {
         public int DNI { get; set; }
         public string nombre { get; set; }

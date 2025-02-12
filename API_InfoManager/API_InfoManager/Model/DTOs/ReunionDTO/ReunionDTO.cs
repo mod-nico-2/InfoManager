@@ -1,6 +1,6 @@
 ﻿namespace API_InfoManager.Models.DTOs.ReunionDTO
 {
-    public class ReunionDTO : CreatePujaDTO
+    public class ReunionDTO : CreateReunionDTO
     {
         public int ID { get; set; }
         public int ID_Alumno { get; set; }

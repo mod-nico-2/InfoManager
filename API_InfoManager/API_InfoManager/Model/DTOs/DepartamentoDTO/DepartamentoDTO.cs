@@ -1,8 +1,8 @@
 ﻿namespace API_InfoManager.Models.DTOs.DepartamentoDTO
 {
-    public class DepartamentoDTO : Crete
+    public class DepartamentoDTO : CreateDepartamentoDTO
     {
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
         public int ID { get; set; }
         public int ID_Jefe_Deptno { get; set; }
         public DateTime Fecha_Fin_Propuesta { get; set; }
