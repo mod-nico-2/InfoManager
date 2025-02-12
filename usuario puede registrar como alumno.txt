@@ -1,3 +1,51 @@
+alumno
+DNI
+nombre
+apellido
+curso
+id_proyecto
+prof_asociado
+
+
+profesor
+DNI
+nombre
+apellido
+ID_DPT
+
+
+proyecto
+ID
+creador
+prof_asociado
+nombre
+desc
+status
+fecha
+id dpt
+fecha presentar
+aula presentar
+
+
+reunion
+id
+id alumno
+id profe
+id proyecto
+fecha
+aula
+
+departamento
+nombre
+id
+id jefe dpto
+fecha fin propuesta
+fecha entrega
+
+
+
+
+
 usuario puede registrar como alumno/profesor
 Como usuario quiero poder registrarme como alumno/profesor para acceder a la aplicacion
 
