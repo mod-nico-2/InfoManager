@@ -18,6 +18,7 @@
 
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/Resources/edificio.jpg" Stretch="UniformToFill" />
+
         </Grid.Background>
 
         <!-- Definir las filas del grid para distribuir los elementos -->
@@ -28,23 +29,25 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="79*"/>
             <!-- Para el botón -->
         </Grid.RowDefinitions>
 
         <!-- Título -->
         <TextBlock 
-            Text="Añadir Dicatador" 
+            Text="Gestión de Proyecto" 
             FontSize="28" 
             FontWeight="SemiBold" 
-            Foreground="Black"
+            Foreground="White"
             HorizontalAlignment="Center" 
             Margin="0,20,0,20" 
             Grid.Row="0"/>
 
         <!-- Campo Nombre -->
         <TextBlock 
-            Text="Nombre Dicatador"
-            Foreground="Black"
+            Text="Nombre Alumno"
+            Foreground="White"
             VerticalAlignment="Center"
             HorizontalAlignment="Left"
             Margin="135,0,0,0"
@@ -62,16 +65,16 @@
             </ui:TextBox.Effect>
         </ui:TextBox>
 
-        <!-- Campo Descripción -->
+        <!-- Campo Nombre Proyecto -->
         <TextBlock 
-            Text="Descripción"
-            Foreground="Black"
-            VerticalAlignment="Center"
+            Text="Nombre del proyecto"
+            Foreground="White"
+            VerticalAlignment="Bottom"
             HorizontalAlignment="Left"
-            Margin="156,0,0,0"
+            Margin="120,0,0,33"
             FontSize="14" 
             IsHitTestVisible="False"
-            Grid.Row="3"/>
+            Grid.Row="2" Grid.RowSpan="3"/>
         <ui:TextBox 
             Background="White" 
             Margin="44,4,60,6" 
@@ -83,16 +86,16 @@
             </ui:TextBox.Effect>
         </ui:TextBox>
 
-        <!-- Campo País -->
+        <!-- Campo Estado del proyecto -->
         <TextBlock 
-            Text="País"
-            Foreground="Black"
+            Text="Estado del proyecto"
+            Foreground="White"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
-            Margin="176,40,0,0"
+            Margin="135,40,0,0"
             FontSize="14" 
             IsHitTestVisible="False"
-            Grid.Row="4" Grid.RowSpan="2"/>
+            Grid.Row="4" Grid.RowSpan="2" Height="19" Width="164"/>
         <ui:TextBox 
             Background="White" 
             Margin="44,18,60,116" 
@@ -104,21 +107,21 @@
             </ui:TextBox.Effect>
         </ui:TextBox>
 
-        <!-- Botón de Añadir Dictador, ubicado en su propia fila -->
+        <!-- Botón de Modificar la propuesta de proyecto, ubicado en su propia fila -->
         <ui:Button 
             Command="{Binding AddCommand, Mode=OneWay}"
-            Content="Añadir Dictador"
+            Content="Modificar propuesta"
             Icon="{ui:SymbolIcon Symbol=Add20}"
-            Background="Black" 
+            Background="Red" 
             Foreground="White"
             Width="200" 
             Height="50" 
             HorizontalAlignment="Left" 
             VerticalAlignment="Top" 
             Grid.Row="5" 
-            Margin="92,82,0,0"
+            Margin="92,109,0,0"
             CornerRadius="25"
-            FontSize="16">
+            FontSize="16" Click="Button_Click_1">
             <ui:Button.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="10" ShadowDepth="4"/>
             </ui:Button.Effect>
