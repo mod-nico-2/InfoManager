@@ -1,5 +1,5 @@
-﻿using DesignAPI.Data;
-using DesignAPI.Models.DTOs.UserDto;
+﻿using API.Data;
+using API.Models.DTOs.UserDto;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -7,10 +7,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Security.Cryptography;
-using DesignAPI.Models.Entity;
-using DesignAPI.Repository.IRepository;
+using API.Models.Entity;
+using API.Repository.IRepository;
 
-namespace DesignAPI.Repository
+namespace API.Repository
 {
     public class UserRepository : IUserRepository
     {

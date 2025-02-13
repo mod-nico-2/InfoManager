@@ -1,7 +1,7 @@
-﻿using DesignAPI.Attributes;
+﻿using API.Attributes;
 using System.ComponentModel.DataAnnotations;
 
-namespace DesignAPI.Models.DTOs.UserDto
+namespace API.Models.DTOs.UserDto
 {
     public class UserRegistrationDto
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using DesignAPI.Models.Entity;
+using API.Models.Entity;
 
-namespace DesignAPI.Data
+namespace API.Data
 {
     public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
@@ -18,5 +18,6 @@ namespace DesignAPI.Data
         //Add models here
         public DbSet<User> Users { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<ProyectoEntity> Proyectos { get; set; }
     }
 }

@@ -6,12 +6,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using DesignAPI.Data;
-using DesignAPI.Models.Entity;
-using DesignAPI.Repository.IRepository;
-using DesignAPI.Repository;
+using API.Data;
+using API.Models.Entity;
+using API.Repository.IRepository;
+using API.Repository;
 using System.Text;
-using DesignAPI.AutoMapper;
+using API.AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +24,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add services to the container.
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
+builder.Services.AddScoped<IProyectoRepository, ProyectoRepository>();
 /* NO NECESARIO PARA EL LOGIN
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ILibroRepository, LibroRepository>();

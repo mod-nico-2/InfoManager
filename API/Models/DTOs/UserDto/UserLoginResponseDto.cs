@@ -1,6 +1,6 @@
-﻿using DesignAPI.Models.Entity;
+﻿using API.Models.Entity;
 
-namespace DesignAPI.Models.DTOs.UserDto
+namespace API.Models.DTOs.UserDto
 {
     public class UserLoginResponseDto
     {

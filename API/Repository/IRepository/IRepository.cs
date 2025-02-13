@@ -1,6 +1,6 @@
-﻿using DesignAPI.Models.Entity;
+﻿using API.Models.Entity;
 
-namespace DesignAPI.Repository.IRepository
+namespace API.Repository.IRepository
 {
     public interface IRepository<TEntity> where TEntity : class
     {

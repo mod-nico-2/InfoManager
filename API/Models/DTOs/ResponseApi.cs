@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace DesignAPI.Models.DTOs
+namespace API.Models.DTOs
 {
     public class ResponseApi
     {

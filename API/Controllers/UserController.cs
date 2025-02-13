@@ -1,12 +1,12 @@
-﻿using DesignAPI.Models.DTOs;
-using DesignAPI.Models.DTOs.UserDto;
+﻿using API.Models.DTOs;
+using API.Models.DTOs.UserDto;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using DesignAPI.Repository.IRepository;
+using API.Repository.IRepository;
 
-namespace DesignAPI.Controllers
+namespace API.Controllers
 {
     [Route("api/users")]
     [ApiController]

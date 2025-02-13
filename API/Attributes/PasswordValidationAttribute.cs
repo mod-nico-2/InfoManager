@@ -1,4 +1,4 @@
-﻿namespace DesignAPI.Attributes
+﻿namespace API.Attributes
 {
     using System.ComponentModel.DataAnnotations;
     using System.Linq;

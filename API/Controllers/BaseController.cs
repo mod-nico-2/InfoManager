@@ -1,4 +1,4 @@
-﻿namespace DesignAPI.Controllers
+﻿namespace API.Controllers
 {
     using AutoMapper;
     using Microsoft.AspNetCore.Authorization;
@@ -7,7 +7,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using global::AutoMapper;
-    using global::DesignAPI.Repository.IRepository;
+    using global::API.Repository.IRepository;
     using System.Runtime.ConstrainedExecution;
 
     [ApiController]

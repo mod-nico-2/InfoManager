@@ -1,7 +1,7 @@
-﻿using DesignAPI.Models.DTOs.UserDto;
-using DesignAPI.Models.Entity;
+﻿using API.Models.DTOs.UserDto;
+using API.Models.Entity;
 
-namespace DesignAPI.Repository.IRepository
+namespace API.Repository.IRepository
 {
     public interface IUserRepository
     {

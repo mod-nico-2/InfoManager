@@ -1,10 +1,10 @@
-﻿using DesignAPI.Models.DTOs.UserDto;
+﻿using API.Models.DTOs.UserDto;
 using AutoMapper;
-using DesignAPI.Models.DTOs;
-using DesignAPI.Models.Entity;
+using API.Models.DTOs;
+using API.Models.Entity;
 
 
-namespace DesignAPI.AutoMapper
+namespace API.AutoMapper
 {
     public class ApplicationMapper : Profile
     {
