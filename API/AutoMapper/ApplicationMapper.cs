@@ -2,6 +2,7 @@
 using AutoMapper;
 using API.Models.DTOs;
 using API.Models.Entity;
+using API.Models.DTOs.ProyectoDTO;
 
 
 namespace API.AutoMapper
@@ -10,6 +11,10 @@ namespace API.AutoMapper
     {
         public ApplicationMapper()
         {
+
+            CreateMap<ProyectoEntity, ProyectoDTO>().ReverseMap();
+            CreateMap<ProyectoEntity, CreateProyectoDTO>().ReverseMap();
+
 
 
             CreateMap<AppUser, UserDto>().ReverseMap();

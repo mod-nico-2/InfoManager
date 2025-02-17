@@ -7,14 +7,14 @@ namespace API.Models.Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string Creador { get; set; }
+        public string Id_Alumno { get; set; }
 
         [MaxLength(100)]
-        public string? Prof_Asociado { get; set; }
+        public string? Id_Profesor { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -32,7 +32,7 @@ namespace API.Models.Entity
         public DateTime Fecha { get; set; }
 
         [Required]
-        public int ID_Departamento { get; set; }
+        public int Id_Departamento { get; set; }
 
         [Required]
         public DateTime Fecha_Presentacion { get; set; }
