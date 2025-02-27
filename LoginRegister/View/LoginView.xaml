@@ -36,7 +36,6 @@
         <TextBlock 
             Text="Inicio de Sesión" 
             FontSize="28" 
-            FontWeight="SemiBold" 
             Foreground="Black" 
             HorizontalAlignment="Center" 
             Margin="0,0,0,20" 
@@ -87,9 +86,8 @@
             Margin="0,10,0,0">
 
             <TextBlock 
-                Text="¿No tienes una cuenta? " 
-                Foreground="White" 
-                VerticalAlignment="Center" />
+                Foreground="Black" 
+                VerticalAlignment="Center" FontWeight="Bold" FontSize="20" ><Run Text="¿"/><Run Language="es-es" Text="Eres alumno"/><Run Text="? "/></TextBlock>
 
             <TextBlock 
                 Foreground="#4A90E2" 
@@ -100,6 +98,13 @@
                 </Hyperlink>
             </TextBlock>
         </StackPanel>
+        <TextBlock 
+            Foreground="Black" 
+            FontWeight="Bold" FontSize="20" Margin="47,41,126,-32" Grid.Row="3" ><Run Text="¿"/><Run Text="Eres "/><Run Language="es-es" Text="profesor"/><Run Text="? "/></TextBlock>
+        <TextBlock 
+            Foreground="#4A90E2" 
+            Cursor="Hand" 
+                Margin="189,47,51,-26" Grid.Row="3"><Hyperlink Command="{Binding RegisterCommand}"><Run Text="Regístrate aquí" /></Hyperlink></TextBlock>
     </Grid>
 </UserControl>
 

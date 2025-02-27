@@ -21,5 +21,12 @@ namespace LoginRegister.View
         {
             InitializeComponent();
         }
+        // En RegistroView.xaml.cs
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        
     }
 }

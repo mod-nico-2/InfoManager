@@ -25,77 +25,86 @@
 
             <RowDefinition Height="Auto" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="10" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="8" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="67.62" />
+            <RowDefinition Height="60.26"/>
+            <RowDefinition Height="221.36"/>
 
         </Grid.RowDefinitions>
 
 
         <TextBlock 
-            Text="Registro de Usuario" 
             FontSize="28" 
             FontWeight="SemiBold" 
             Foreground="Black"
-            HorizontalAlignment="Center" 
-            Margin="0,0,0,30" 
-            Grid.Row="0"/>
+            HorizontalAlignment="Left" 
+            Margin="32,0,0,30" 
+            Grid.Row="0" Width="284"><Run Text="Registro de "/><Run Language="es-es" Text="Profesor"/></TextBlock>
 
 
-        <TextBlock Text="Nombre Completo"
+        <TextBlock
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="73,46,0,0"
+                   Margin="32,53,0,0"
                    FontSize="14" 
-                   IsHitTestVisible="False"/>
+                   IsHitTestVisible="False" Height="19" Width="24" Grid.RowSpan="2"><Run Language="es-es" Text="DNI"/></TextBlock>
         <ui:TextBox 
             Background="White" 
-            Margin="14,70,68,3" 
+            Margin="120,49,28,10" 
             Text="{Binding Name, Mode=TwoWay}"
-            BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14" Grid.RowSpan="3">
+            BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14" Grid.RowSpan="4">
             <ui:TextBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:TextBox.Effect>
         </ui:TextBox>
 
 
-        <TextBlock Text="Nombre de Usuario"
+        <TextBlock Text="Usuario"
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="70,5,0,0"
+                   Margin="19,3,0,0"
                    FontSize="14" 
                    IsHitTestVisible="False"
-                   Grid.Row="3"/>
+                   Grid.Row="5" Height="18" Width="51"/>
         <ui:TextBox 
             Background="White" 
-            Margin="14,5,68,297" 
+            Margin="117,3,30,44" 
             Text="{Binding UserName, Mode=TwoWay}"
             BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
-            Grid.Row="5">
+            Grid.Row="5" RenderTransformOrigin="0.5,0.5">
+            <ui:TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.079"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ui:TextBox.RenderTransform>
             <ui:TextBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:TextBox.Effect>
         </ui:TextBox>
 
 
-        <TextBlock Text="Correo Electrónico"
+        <TextBlock
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="74,44,0,0"
+                   Margin="19,10,0,0"
                    FontSize="14" 
                    IsHitTestVisible="False"
-                   Grid.Row="5"/>
+                   Grid.Row="6" Height="19" Width="64"><Run Language="es-es" Text="Apellidos"/><LineBreak/><Run/></TextBlock>
         <ui:TextBox 
             Background="White" 
-            Margin="14,62,68,239" 
+            Margin="120,6,28,30" 
             Text="{Binding Email, Mode=TwoWay}"
             BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
-            Grid.Row="5">
+            Grid.Row="6">
             <ui:TextBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:TextBox.Effect>
@@ -106,16 +115,16 @@
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="96,100,0,0"
+                   Margin="19,54,0,0"
                    FontSize="14" 
                    IsHitTestVisible="False"
-                   Grid.Row="5"/>
+                   Grid.Row="6" Height="18" Width="70" Grid.RowSpan="2"/>
         <ui:PasswordBox 
             Background="White" 
-            Margin="14,123,68,180" 
+            Margin="120,52,28,201" 
             Password="{Binding Password, Mode=TwoWay}"
             BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
-            Grid.Row="5">
+            Grid.Row="6" Grid.RowSpan="2">
             <ui:PasswordBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:PasswordBox.Effect>
@@ -128,17 +137,52 @@
             Icon="{ui:SymbolIcon Symbol=Add20}"
             Background="Black" 
             Foreground="White"
-            Width="200" 
-            Height="50" 
+            Width="138" 
+            Height="40" 
             HorizontalAlignment="Left" 
             VerticalAlignment="Top" 
-            Grid.Row="5" 
-            Margin="33,167,0,0" 
+            Margin="71,84,0,0" 
             CornerRadius="25"
-            FontSize="16">
+            FontSize="16" Grid.Row="7" Click="Button_Click_1">
             <ui:Button.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="10" ShadowDepth="4"/>
             </ui:Button.Effect>
         </ui:Button>
+        <TextBlock
+            Foreground="Black"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="19,39,0,0"
+            FontSize="14" 
+            IsHitTestVisible="False"
+            Grid.Row="5" Height="18" Width="70"><Run Language="es-es" Text="Nombre"/></TextBlock>
+        <ui:TextBox 
+            Background="White" 
+            Margin="120,39,28,4" 
+            Text="{Binding Email, Mode=TwoWay}"
+            BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
+            Grid.Row="5">
+            <ui:TextBox.Effect>
+                <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
+            </ui:TextBox.Effect>
+        </ui:TextBox>
+        <TextBlock
+            Foreground="Black"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="1,42,0,0"
+            FontSize="14" 
+            IsHitTestVisible="False"
+            Grid.Row="7" Height="18" Width="105"><Run Language="es-es" Text="Id_departamento"/></TextBlock>
+        <ui:PasswordBox 
+            Background="White" 
+            Margin="120,38,28,155" 
+            Password="{Binding Password, Mode=TwoWay}"
+            BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
+            Grid.Row="7">
+            <ui:PasswordBox.Effect>
+                <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
+            </ui:PasswordBox.Effect>
+        </ui:PasswordBox>
     </Grid>
 </UserControl>
