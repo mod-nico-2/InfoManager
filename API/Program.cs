@@ -22,6 +22,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 // Add services to the container.
+builder.Services.AddScoped<IAlumnoRepository, AlumnoRepository>();
+builder.Services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
+builder.Services.AddScoped<IProfesorRepository, ProfesorRepository>();
+builder.Services.AddScoped<IProyectoRepository, ProyectoRepository>();
+builder.Services.AddScoped<IReunionRepository, ReunionRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 /* NO NECESARIO PARA EL LOGIN
