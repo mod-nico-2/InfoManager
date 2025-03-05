@@ -1,0 +1,30 @@
+<div class="container">
+  <button class="back-button" (click)="goBack()">⬅ Volver</button>
+  <h1 class="title">Detalle del Objeto</h1>
+
+  <div class="form-group">
+    <label for="dniCreador">DNI Creador:</label>
+    <input id="dniCreador" type="text" [(ngModel)]="objeto.dni_Creador" required />
+
+    <label for="dniProfAsociado">DNI Profesor Asociado:</label>
+    <input id="dniProfAsociado" type="text" [(ngModel)]="objeto.dni_Prof_Asociado" required />
+
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" [(ngModel)]="objeto.nombre" required />
+
+    <label for="descripcion">Descripción:</label>
+    <input id="descripcion" type="text" [(ngModel)]="objeto.descripcion" required />
+
+    <label for="idDepartamento">ID Departamento:</label>
+    <input id="idDepartamento" type="number" [(ngModel)]="objeto.iD_Departamento" required />
+
+    <label for="fechaPresentacion">Fecha Presentación:</label>
+    <input id="fechaPresentacion" type="date" [(ngModel)]="objeto.fecha_Presentacion" required />
+
+    <label for="aulaPresentacion">Aula Presentación:</label>
+    <input id="aulaPresentacion" type="text" [(ngModel)]="objeto.aula_Presentacion" required />
+  </div>
+
+  <button class="update-button" (click)="actualizarObjeto()">Actualizar</button>
+  <button class="delete-button" (click)="eliminarObjeto()">Eliminar</button>
+</div>

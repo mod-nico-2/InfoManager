@@ -1,0 +1,14 @@
+<div class="grid-container container">
+  <a [routerLink]="['/objetoPage', objeto.id]" class="listing-link">
+    <section class="listing">
+      <h1>{{ objeto.id }}</h1>
+      <h2 class="listing-heading">{{ objeto.nombre }}</h2>
+      <p class="listing-description">{{ objeto.descripcion }}</p>
+      <div class="listing-details">
+        <span>Dept: {{ objeto.iD_Departamento }}</span>
+        <span>Fecha: {{ objeto.fecha_Presentacion | date }}</span>
+        <span>Aula: {{ objeto.aula_Presentacion }}</span>
+      </div>
+    </section>
+  </a>
+</div>
