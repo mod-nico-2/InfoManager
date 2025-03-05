@@ -1,0 +1,29 @@
+<div class="container">
+  <button class="back-button" (click)="goBack()">⬅ Volver</button>
+  <h1 class="title">Crear Nuevo Objeto</h1>
+
+  <div class="form-group">
+    <label for="dniCreador">DNI Creador:</label>
+    <input id="dniCreador" type="text" placeholder="DNI Creador" [(ngModel)]="nuevoObjeto.dni_Creador" required />
+
+    <label for="dniProfAsociado">DNI Profesor Asociado:</label>
+    <input id="dniProfAsociado" type="text" placeholder="DNI Profesor Asociado" [(ngModel)]="nuevoObjeto.dni_Prof_Asociado" required />
+
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" placeholder="Nombre" [(ngModel)]="nuevoObjeto.nombre" required />
+
+    <label for="descripcion">Descripción:</label>
+    <input id="descripcion" type="text" placeholder="Descripción" [(ngModel)]="nuevoObjeto.descripcion" required />
+
+    <label for="idDepartamento">ID Departamento:</label>
+    <input id="idDepartamento" type="number" placeholder="ID Departamento" [(ngModel)]="nuevoObjeto.iD_Departamento" required />
+
+    <label for="fechaPresentacion">Fecha de Presentación:</label>
+    <input id="fechaPresentacion" type="date" [(ngModel)]="nuevoObjeto.fecha_Presentacion" required />
+
+    <label for="aulaPresentacion">Aula de Presentación:</label>
+    <input id="aulaPresentacion" type="text" placeholder="Aula de Presentación" [(ngModel)]="nuevoObjeto.aula_Presentacion" required />
+  </div>
+
+  <button class="update-button" (click)="crearObjeto()">Crear</button>
+</div>

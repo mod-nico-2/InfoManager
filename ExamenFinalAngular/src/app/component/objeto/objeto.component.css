@@ -1,0 +1,56 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  /* Cuadrícula flexible */
+  gap: 20px;
+  padding: 20px;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.listing {
+  background: var(--accent-color, #f9f9f9);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.listing:hover {
+  transform: scale(1.05); 
+}
+
+.listing h1 {
+  font-size: 24px;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.listing-heading {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.listing-description {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.listing-details {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.listing-details span {
+  font-weight: bold;
+}
