@@ -11,8 +11,18 @@ namespace LoginRegister.Helpers
     {
         public const string JSON_FILTER = "JSON Files (*.json)|*.json|All Files (*.*)|*.*";
 
-        public const string BASE_URL = "http://localhost:5072/api/";
-        public const string DICATADOR_URL = "Dicatador";
+        internal static string[] OPCIONES_REGISTRO = 
+        {
+            "Alumno",
+            "Profesor",
+        };
+
+
+        public const string BASE_URL = "https://localhost:8081/api/";
+        public const string ALUMNO_PATH = "Alumno/";
+        public const string PROFESOR_PATH = "Profesor/";
+
+        public const string DICATADOR_URL = "Dicatador/";
         public const string LOGIN_PATH = "users/login";
         public const string REGISTER_PATH = "users/register";
 

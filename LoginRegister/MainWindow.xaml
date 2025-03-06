@@ -6,7 +6,7 @@
         xmlns:viewModel="clr-namespace:LoginRegister.ViewModel" 
         xmlns:view="clr-namespace:LoginRegister.View" 
         mc:Ignorable="d"
-        Title="LoginRegister" Height="450" Width="800"
+        Title="LoginRegister" Height="600" Width="800"
         d:DataContext="{d:DesignInstance Type=viewModel:MainViewModel}">
 
     <Window.Resources>

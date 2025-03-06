@@ -9,27 +9,36 @@
     xmlns:viewmodels="clr-namespace:LoginRegister.ViewModel" 
     d:DataContext="{d:DesignInstance Type=viewmodels:RegistroViewModel}"
     mc:Ignorable="d"
-    Height="412" Width="801">
+    d:Height="1500" d:Width="801">
 
-    <UserControl.Background>
-        <ImageBrush 
-     ImageSource="/Resources/edificio.jpg" 
-     Stretch="UniformToFill" />
-    </UserControl.Background>
 
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center"  Height="399" Width="316">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center"  Height="550" Width="350">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
 
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
+
+            <RowDefinition Height="auto" />
+
+            <RowDefinition Height="auto" />
+
+            <RowDefinition Height="auto" />
+
+            <RowDefinition Height="auto" />
+
+            <RowDefinition Height="auto" />
+
+            <RowDefinition Height="auto" />
+
+            <RowDefinition Height="auto" />
 
         </Grid.RowDefinitions>
 
@@ -40,22 +49,21 @@
             FontWeight="SemiBold" 
             Foreground="Black"
             HorizontalAlignment="Center" 
-            Margin="0,0,0,30" 
             Grid.Row="0"/>
 
 
         <TextBlock Text="Nombre Completo"
+                   Grid.Row="1"
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="73,46,0,0"
                    FontSize="14" 
                    IsHitTestVisible="False"/>
+
         <ui:TextBox 
             Background="White" 
-            Margin="14,70,68,3" 
             Text="{Binding Name, Mode=TwoWay}"
-            BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14" Grid.RowSpan="3">
+            BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14" Grid.Row="2">
             <ui:TextBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:TextBox.Effect>
@@ -66,16 +74,14 @@
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="70,5,0,0"
                    FontSize="14" 
                    IsHitTestVisible="False"
                    Grid.Row="3"/>
         <ui:TextBox 
             Background="White" 
-            Margin="14,5,68,297" 
             Text="{Binding UserName, Mode=TwoWay}"
             BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
-            Grid.Row="5">
+            Grid.Row="4">
             <ui:TextBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:TextBox.Effect>
@@ -86,16 +92,14 @@
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="74,44,0,0"
                    FontSize="14" 
                    IsHitTestVisible="False"
                    Grid.Row="5"/>
         <ui:TextBox 
             Background="White" 
-            Margin="14,62,68,239" 
             Text="{Binding Email, Mode=TwoWay}"
             BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
-            Grid.Row="5">
+            Grid.Row="6">
             <ui:TextBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:TextBox.Effect>
@@ -106,20 +110,44 @@
                    Foreground="Black"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="96,100,0,0"
                    FontSize="14" 
                    IsHitTestVisible="False"
-                   Grid.Row="5"/>
+                   Grid.Row="7"/>
         <ui:PasswordBox 
             Background="White" 
-            Margin="14,123,68,180" 
             Password="{Binding Password, Mode=TwoWay}"
             BorderBrush="#4A90E2" BorderThickness="1" Padding="10,5" FontSize="14"
-            Grid.Row="5">
+            Grid.Row="8">
             <ui:PasswordBox.Effect>
                 <DropShadowEffect Color="Black" Direction="270" BlurRadius="5" ShadowDepth="2"/>
             </ui:PasswordBox.Effect>
         </ui:PasswordBox>
+
+        <ComboBox ItemsSource="{Binding Opciones}" 
+          SelectedItem="{Binding OpcionSeleccionada, Mode=TwoWay}" 
+          Width="200" Margin="10" Grid.Row="9" />
+
+        <StackPanel Visibility="{Binding EsAlumno}" Grid.Row="10">
+            <TextBlock Text="DNI:"/>
+            <TextBox Text="{Binding Dni}" FontSize="14"/>
+
+            <TextBlock Text="Apellido:"/>
+            <TextBox Text="{Binding Apellido}" FontSize="14"/>
+
+            <TextBlock Text="Curso:"/>
+            <TextBox Text="{Binding Curso}" FontSize="14"/>
+        </StackPanel>
+
+        <StackPanel Visibility="{Binding EsProfesor}" Grid.Row="10">
+            <TextBlock Text="DNI:"/>
+            <TextBox Text="{Binding Dni}" FontSize="14"/>
+
+            <TextBlock Text="Apellido:"/>
+            <TextBox Text="{Binding Apellido}" FontSize="14"/>
+
+            <TextBlock Text="ID Departamento:"/>
+            <TextBox Text="{Binding IdDepartamento}" FontSize="14"/>
+        </StackPanel>
 
 
         <ui:Button 
@@ -129,11 +157,11 @@
             Background="Black" 
             Foreground="White"
             Width="200" 
-            Height="50" 
-            HorizontalAlignment="Left" 
+            Height="50"
+            Margin="0,50,0,0"
+            HorizontalAlignment="Center" 
             VerticalAlignment="Top" 
-            Grid.Row="5" 
-            Margin="33,167,0,0" 
+            Grid.Row="11"  
             CornerRadius="25"
             FontSize="16">
             <ui:Button.Effect>
