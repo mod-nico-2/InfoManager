@@ -1,35 +1,39 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using LoginRegister.Helpers;
 using LoginRegister.Interface;
 using LoginRegister.Models;
+using LoginRegister.Services;
 using LoginRegister.View;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.ObjectModel;
+using System.Reflection.Metadata;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace LoginRegister.ViewModel;
 
 public partial class DashboardViewModel : ViewModelBase
 {
-    private readonly IDicatadorServiceToApi _dicatadorServiceToApi;
-    private readonly AddDicatadorViewModel _addViewModel;
+    private readonly IHttpJsonProvider<ProyectoDTO> _httpJsonProvider;
+    private readonly AddProyectoViewModel _addProyectoViewModel;
 
-    public DashboardViewModel(IDicatadorServiceToApi dicatadorServiceToApi, AddDicatadorViewModel addViewModel)
+    public DashboardViewModel(IHttpJsonProvider<ProyectoDTO> httpJsonProvider, AddProyectoViewModel addProyectoViewModel)
     {
-        _dicatadorServiceToApi = dicatadorServiceToApi;
-        _addViewModel = addViewModel;
+        _httpJsonProvider = httpJsonProvider;
+        _addProyectoViewModel = addProyectoViewModel;
 
-        Dicatadores = new List<DicatadorDTO>(); 
-        PagedDicatadores = new ObservableCollection<DicatadorDTO>();
+        _proyectos = new List<ProyectoDTO>();
+        PagedProyectos = new ObservableCollection<ProyectoDTO>();
 
         ItemsPerPage = 5; 
         CurrentPage = 0; 
     }
 
-    private List<DicatadorDTO> Dicatadores; 
+    private List<ProyectoDTO> _proyectos; 
 
     [ObservableProperty]
-    private ObservableCollection<DicatadorDTO> pagedDicatadores;
+    private ObservableCollection<ProyectoDTO> pagedProyectos;
 
     [ObservableProperty]
     private int currentPage; 
@@ -37,24 +41,24 @@ public partial class DashboardViewModel : ViewModelBase
     [ObservableProperty]
     private int itemsPerPage; 
 
-    public int TotalPages => (int)Math.Ceiling((double)Dicatadores.Count / ItemsPerPage);
+    public int TotalPages => (int)Math.Ceiling((double)_proyectos.Count / ItemsPerPage);
 
  
     public override async Task LoadAsync()
     {
         try
         {
-            
-            Dicatadores.Clear();
-            PagedDicatadores.Clear();
 
-          
-            IEnumerable<DicatadorDTO> listaDicatadores = await _dicatadorServiceToApi.GetDicatadores();
-            Dicatadores.AddRange(listaDicatadores.OrderBy(d => d.Id));
+            _proyectos.Clear();
+            PagedProyectos.Clear();
+
+
+            IEnumerable<ProyectoDTO> listaProyectos = await _httpJsonProvider.GetAsync(Constants.PROYECTO_PATH);
+            _proyectos.AddRange(listaProyectos.OrderBy(d => d.Id));
 
           
             CurrentPage = 0;
-            UpdatePagedDicatadores();
+            UpdatePagedList();
         }
         catch (Exception ex)
         {
@@ -64,26 +68,26 @@ public partial class DashboardViewModel : ViewModelBase
     }
 
    
-    private void UpdatePagedDicatadores()
+    private void UpdatePagedList()
     {
-       
-        PagedDicatadores.Clear();
 
-        var pagedItems = Dicatadores.Skip(CurrentPage * ItemsPerPage).Take(ItemsPerPage).ToList();
+        PagedProyectos.Clear();
+
+        var pagedItems = _proyectos.Skip(CurrentPage * ItemsPerPage).Take(ItemsPerPage).ToList();
         foreach (var item in pagedItems)
         {
-            PagedDicatadores.Add(item);
+            PagedProyectos.Add(item);
         }
     }
 
     [RelayCommand]
-    public async Task AddDicatador()
+    public async Task AddProyecto()
     {
-        var addDicatadorWindow = new AddDicatadorView();
+        var addProyectoWindow = new AddProyectoView();
 
-        var addDicatadorViewModel = App.Current.Services.GetService<AddDicatadorViewModel>();
-        addDicatadorWindow.DataContext = addDicatadorViewModel;
-        addDicatadorWindow.ShowDialog();       
+        var addProyectoViewModel = App.Current.Services.GetService<AddProyectoViewModel>();
+        addProyectoWindow.DataContext = addProyectoViewModel;
+        addProyectoWindow.ShowDialog();       
         await LoadAsync();
     }
 
@@ -101,7 +105,7 @@ public partial class DashboardViewModel : ViewModelBase
         if (CurrentPage > 0)
         {
             CurrentPage--;
-            UpdatePagedDicatadores();
+            UpdatePagedList();
         }
     }
 
@@ -111,16 +115,50 @@ public partial class DashboardViewModel : ViewModelBase
         if (CurrentPage < TotalPages - 1)
         {
             CurrentPage++;
-            UpdatePagedDicatadores();
+            UpdatePagedList();
         }
     }
+
+
+    private ProyectoDTO _proyectoSeleccionado;
+    public ProyectoDTO ProyectoSeleccionado
+    {
+        get => _proyectoSeleccionado;
+        set
+        {
+            _proyectoSeleccionado = value;
+        }
+    }
+
+    [RelayCommand]
+    public async Task Delete()
+    {
+
+        if (_proyectoSeleccionado is ProyectoDTO)
+        {
+
+            if (await _httpJsonProvider.Delete($"{Constants.PROYECTO_PATH}", _proyectoSeleccionado.Id))
+            {
+                LoadAsync();
+            }
+            else
+            {
+                MessageBox.Show("Error", "Error al borrar", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+    }
+
+    /*
     public async void  MyDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
     {
-        if (e.Row.Item is DicatadorDTO dicatadorDTO)
+        if (e.Row.Item is ProyectoDTO proyectoDTO)
         {
            await _dicatadorServiceToApi.PutDicatador(dicatadorDTO);
         }
     }
+    */
+
     private bool CanGoToPreviousPage() => CurrentPage > 0;
 
     private bool CanGoToNextPage() => CurrentPage < TotalPages - 1;

@@ -7,12 +7,12 @@ public partial class MainViewModel : ViewModelBase
 {
        private ViewModelBase? _selectedViewModel;
 
-        public MainViewModel(DashboardViewModel dashboardViewModel, LoginViewModel loginViewModel, RegistroViewModel registroViewModel, AddDicatadorViewModel addViewModel)
+        public MainViewModel(DashboardViewModel dashboardViewModel, LoginViewModel loginViewModel, RegistroViewModel registroViewModel, AddProyectoViewModel addProyectoViewModel)
         {
             DashboardViewModel = dashboardViewModel;
             LoginViewModel = loginViewModel;
             RegistroViewModel = registroViewModel;
-            AddDicatadorViewModel = addViewModel;
+            AddProyectoViewModel = addProyectoViewModel;
             _selectedViewModel = loginViewModel;
         }
 
@@ -25,7 +25,7 @@ public partial class MainViewModel : ViewModelBase
         public DashboardViewModel DashboardViewModel { get; }
         public LoginViewModel LoginViewModel { get; }
         public RegistroViewModel RegistroViewModel { get; }
-        public AddDicatadorViewModel AddDicatadorViewModel { get; }
+        public AddProyectoViewModel AddProyectoViewModel { get; }
  
 
         public override async Task LoadAsync()
