@@ -12,11 +12,6 @@
     ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d" Width="804" Height="441">
 
-    <UserControl.Background>
-        <ImageBrush 
-        ImageSource="/Resources/edificio.jpg" 
-        Stretch="UniformToFill" />
-    </UserControl.Background>
 
     <Grid Margin="42" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.458">
         <Grid.RowDefinitions>

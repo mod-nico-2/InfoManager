@@ -16,10 +16,6 @@
 
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="446" Width="400">
 
-        <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Resources/edificio.jpg" Stretch="UniformToFill" />
-
-        </Grid.Background>
 
         <!-- Definir las filas del grid para distribuir los elementos -->
         <Grid.RowDefinitions>
