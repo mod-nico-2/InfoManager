@@ -21,5 +21,6 @@ namespace DesignAPI.Models.DTOs.AlumnoDTO
 
         [MaxLength(50, ErrorMessage = "Max char is 50")]
         public string? Prof_Asociado { get; set; }
+
     }
 }

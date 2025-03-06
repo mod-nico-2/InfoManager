@@ -12,11 +12,6 @@
     Height="434" Width="789" Loaded="UserControl_Loaded">
 
 
-    <UserControl.Background>
-        <ImageBrush 
-            ImageSource="/Resources/edificio.jpg" 
-            Stretch="UniformToFill" />
-    </UserControl.Background>
 
 
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
