@@ -43,7 +43,7 @@ namespace LoginRegister
             services.AddSingleton<MainViewModel>();
             services.AddTransient<DashboardViewModel>();
             services.AddTransient<LoginViewModel>();
-            services.AddSingleton<AddDicatadorViewModel>();
+            services.AddSingleton<AddProyectoViewModel>();
             services.AddTransient<RegistroViewModel>();
             services.AddTransient<ViewModelBase>();
       

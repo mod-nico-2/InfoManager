@@ -16,6 +16,8 @@ namespace LoginRegister.Interface
         Task Authenticate(string path, HttpClient httpClient, HttpResponseMessage request);
         Task<T?> LoginPostAsync(string path, LoginDTO data);
         Task<T?> RegisterPostAsync(string path, UserRegistroDTO data);
+
+        Task<bool> Delete(string path, int id);
     }
 
 }
